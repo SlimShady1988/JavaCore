@@ -14,8 +14,8 @@ public enum EnumClass {
 
     EnumClass (Integer days, Integer holidays, Integer workingDays) {
         this.days = days;
-        this.holidays = holidays;
         this.workingDays = workingDays;
+        this.holidays = holidays;
     }
 
     public Integer getDays() {

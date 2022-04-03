@@ -1,0 +1,12 @@
+{
+  "firstName": "Kane",
+  "lastName": "Kabal",
+    "languages": ["Java", "PHP", "JS"],
+    "frameworks": ["Spring", "Symfony", "JQuery"],
+  "role": {
+    "frontend": true,
+    "backend": true,
+    "fullstack": true
+  }
+
+}

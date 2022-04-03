@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<catalog>
+    <book>
+        <author>Me</author>
+        <title>MyBook</title>
+        <genre>Computer</genre>
+        <price currency = "USA">2000</price>
+        <publish_date>2020.14.12</publish_date>
+    </book>
+    <book1>
+        <author>Oxa</author>
+        <title>HerBook</title>
+        <genre>Psychology</genre>
+        <price currency = "USA">500</price>
+        <publish_date>2025.4.9</publish_date>
+    </book1>
+</catalog>
