@@ -5,17 +5,20 @@ import java.util.stream.Stream;
 
 public class OptionalClass {
     public static void main(String[] args) {
-        Optional<Object> empty = Optional.empty();
+        /*return new Optional through private constructor (Factory method)*/
+        Optional<Integer> optionalEmpty = Optional.empty();
+        /*return new Optional  with passed value  or nullPointerExc*/
         Optional<Integer> optionalInteger = Optional.of(10);
-        Optional<Object> optionalO = Optional.ofNullable(null);
+        /*return new Optional through private constructor (Factory method) or passed value */
+        Optional<Integer> optionalNullable = Optional.ofNullable(null);
 
         String str;
         String str2;
         String str3;
 
         if (getString().isPresent()) {
-//            str = getString().get();
-            str = getString().orElseGet(String::new);
+            str = getString().get();
+//            str = getString().orElseGet(String::new);
             System.out.println(str);
         }
         str2 = getString().orElse(null);
@@ -24,12 +27,14 @@ public class OptionalClass {
         Stream.of(str3).forEach(System.out::println);
 
 
-        System.out.println(empty);
+        System.out.println(optionalEmpty);
         System.out.println(optionalInteger);
-        System.out.println(optionalO);
+        System.out.println(optionalNullable);
     }
 
     public static Optional<String> getString(){
         return Optional.of("Simple value");
     }
 }
+
+

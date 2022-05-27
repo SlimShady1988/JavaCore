@@ -42,6 +42,12 @@ public class QueueInterface {
         Queue<User> collection = getListCollection(queue);
         if (collection.getClass() == ArrayDeque.class) {
             System.out.println("##########################                   Перебір ArrayDeque колекції                           ##########################");
+            System.out.println("##########################                   додаткові методи для інтерфейсу Deque          ##########################");
+            Deque<User> dequeCollection = new ArrayDeque<>(collection);
+            System.out.println(dequeCollection.getFirst().getName());
+            System.out.println(dequeCollection.pollLast().getName());
+            System.out.println("##########################                   додаткові методи для інтерфейсу Deque          ##########################");
+
             for (User user : collection) {
                 System.out.println(user.getName());
             }

@@ -1,5 +1,7 @@
 package Core;
 
+import java.io.Externalizable;
+
 public class TestClass {
     public static void main(String[] args) {
         // Interface Implements
@@ -32,5 +34,26 @@ public class TestClass {
 
         EnumClass monday = EnumClass.MONDAY;
         System.out.println(monday.days);
+
+        String hello = "hello";
+        String vic = "Victor";
+        String concat = hello.concat(vic);
+
+        System.out.println(hello + vic);
+        System.out.println(concat);
+        System.out.println(hello);
+
+        System.out.println("================= Immutable Classes =================");
+        Integer s1 = 11111;
+        Integer s2 = 11111;
+
+        boolean res = s1 == s2;
+        boolean res2 = s1.equals(s2);
+        System.out.println(res);
+        System.out.println(res2);
+
+                System.out.println("================= Immutable Classes =================");
+
+
     }
 }

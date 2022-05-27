@@ -8,9 +8,10 @@ public enum EnumClass {
     THURSDAY(28,34,54),
     FRIDAY(28,34,54),
     SATURDAY(28,34,54);
-    Integer days;
-    Integer holidays;
-    Integer workingDays;
+
+    final Integer days;
+    final Integer holidays;
+    final Integer workingDays;
 
     EnumClass (Integer days, Integer holidays, Integer workingDays) {
         this.days = days;
@@ -28,5 +29,12 @@ public enum EnumClass {
 
     public Integer getWorkingDays() {
         return workingDays;
+    }
+}
+
+class TryCl {
+    public static void main(String[] args) {
+        int ret = EnumClass.SUNDAY.getDays() + EnumClass.MONDAY.days;
+        System.out.println(ret);
     }
 }
