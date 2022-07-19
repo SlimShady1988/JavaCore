@@ -1,9 +1,11 @@
 package Core.Java8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class StreamEx {
     public static void main(String[] args) {
@@ -14,16 +16,21 @@ public class StreamEx {
         persons.add(new Person("Pol", 33));
         persons.add(new Person("Slave", 31));
 
-        persons.stream()
-                .filter(person -> person.getAge() >= 32)
-                .sorted(Comparator.comparing(Person::getName))
-                .map(Person::getName)
-                .forEach(
-//                (String name) -> {
-//                    System.out.println(name);
-//                }
-                        System.out::println
-                );
+//        persons.stream()
+//                .filter(person -> person.getAge() >= 32)
+//                .sorted(Comparator.comparing(Person::getName))
+//                .map(Person::getName)
+//                .forEach(System.out::println);
+
+        var p = persons.stream().filter(person -> person.getName().equals("Oxaa"))
+                .reduce(null, (a1, a2) ->a2 );
+        System.out.println(p.getName());
+
+
+//        var p = persons.stream().filter(person -> person.getName().equals("OxA")).findAny();
+//        var pers =  p.orElseGet(() ->  persons.stream().filter(person -> person.getName().equals("Oxa")).findAny().get());
+//        System.out.println(pers.getName());
+
 
 //        List<PersonPred> personPreds = new ArrayList<>();
 //
@@ -42,12 +49,10 @@ public class StreamEx {
 class StreamEx2 {
     public static void main(String[] args) {
         List<Person> persons = new ArrayList<>();
-
         persons.add(new Person("Vic", 34));
         persons.add(new Person("Oxa", 29));
         persons.add(new Person("Pol", 33));
         persons.add(new Person("Slave", 31));
-
         int sum = 0;
         int thirty = 0;
 
@@ -57,10 +62,10 @@ class StreamEx2 {
                 thirty++;
             }
         }
+
         double averageAge = (double) sum / thirty;
 
         System.out.println(averageAge);
-
         double average2 = persons.stream().filter(person -> person.getAge() > 30).mapToInt(Person::getAge).average().getAsDouble();
         System.out.println(average2);
 

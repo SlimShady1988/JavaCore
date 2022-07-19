@@ -54,6 +54,21 @@ public class TestClass {
 
                 System.out.println("================= Immutable Classes =================");
 
+        Object o = 1001L;
+
+        var result = switch (o) {
+            case Integer a  -> a;
+            case null -> null;
+            case String s -> Integer.parseInt(s);
+            case Long l && l > 1000 && l < 10_000 -> {
+                System.out.println("Hello from Long");
+                yield 1000;
+
+            }
+            default -> "DEFAULT";
+        };
+
+
 
     }
 }
