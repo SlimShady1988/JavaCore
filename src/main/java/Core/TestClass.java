@@ -20,18 +20,6 @@ public class TestClass {
         abstractClassExt.simpleMethod();
         System.out.println("==================================");
 
-        // Scope example
-        SimpleClass simpleClass = new SimpleClass();
-        System.out.println(simpleClass.localString);
-        System.out.println(simpleClass.protectedString);
-        System.out.println(simpleClass.publicString);
-        System.out.println(SimpleClass.protectedMethod());
-//        String localString = simpleClass.localString;
-//        String protectedString = simpleClass.protectedString;
-//        String publicString = simpleClass.publicString;
-
-        System.out.println("==================================");
-
         EnumClass monday = EnumClass.MONDAY;
         System.out.println(monday.days);
 

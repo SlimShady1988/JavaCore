@@ -1,11 +1,13 @@
 package Core;
 
-public class SimpleClass {
-    private final String privateString = "PrivateString";
-    protected final String protectedString = "protectedString";
-    protected static final String protectedStaticString = "protectedStaticString";
-    public final String publicString = "publicString";
-    final String localString = "localString";
+import Core.Scops.InSamePackageClass;
+
+public class SimpleClass extends InSamePackageClass {
+    private static String privateString = "PrivateString";
+    protected static String protectedString = "protectedString";
+    public static String publicString = "publicString";
+
+    static String localString = "localString";
 
     public void simpleMethod () {
         System.out.println("Simple String");
@@ -16,3 +18,4 @@ public class SimpleClass {
     }
 
 }
+
