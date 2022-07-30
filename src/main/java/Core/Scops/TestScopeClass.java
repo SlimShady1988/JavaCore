@@ -3,11 +3,14 @@ package Core.Scops;
 import Core.SimpleClass;
 
 public class TestScopeClass extends SimpleClass{
+    private String privateString2 = "PrivateString";
     private static String privateString = "PrivateString";
     protected static String protectedString = "protectedString";
     public static String publicString = "publicString";
 
     static String localString = "localString";
+
+
 
     public static void main(String[] args) {
         System.out.println("================  Scope example  ==================");
@@ -22,6 +25,8 @@ public class TestScopeClass extends SimpleClass{
         */
         System.out.println(simpleClass.publicString);
         System.out.println(publicString);
+
+
         // #############################################################################################################
         // ###########################################        Protected      ###########################################
         // #############################################################################################################
