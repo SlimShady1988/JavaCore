@@ -24,6 +24,7 @@ public class TryCollection {
             String name = RandomStringUtils.randomAlphabetic(8);
             String surname = RandomStringUtils.randomAlphabetic(10);
             var age = random.nextInt(80 - 18) + 18;
+            assert list != null;
             list.add(new User(name, surname, age));
         }
 

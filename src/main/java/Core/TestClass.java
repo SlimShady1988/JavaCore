@@ -55,8 +55,5 @@ public class TestClass {
             }
             default -> "DEFAULT";
         };
-
-
-
     }
 }

@@ -72,7 +72,7 @@ public class SetInterface {
             System.out.println("##########################        ##########################");
 
             for (Object user : array) {
-                User o = (User)Optional.ofNullable(user).orElse(null);
+                User o = (User) user;
 //                Object user2 = ((user == User.class) ? (User)user : null);
                         System.out.println(o.getName());
             }
@@ -89,7 +89,7 @@ public class SetInterface {
             System.out.println("###################################################");
 
             for (Object user : array) {
-                User o = (User)Optional.ofNullable(user).orElse(null);
+                User o = (User) user;
                 System.out.println(o.getName());
             }
         }

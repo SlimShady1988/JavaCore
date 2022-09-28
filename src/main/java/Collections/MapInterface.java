@@ -1,6 +1,7 @@
 package Collections;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MapInterface {
     public static final Map<User, Role> hashMapPeople = new HashMap<>();
@@ -87,6 +88,7 @@ public class MapInterface {
 
     public static void mapEx(Map<User, Role> map) {
         Map<User, Role> mapCollection = getMapCollection(map);
+        System.out.println(mapCollection.getClass());
         if ((mapCollection.getClass() == HashMap.class) || (mapCollection.getClass() == LinkedHashMap.class) || (mapCollection.getClass() == WeakHashMap.class)) {
             System.out.println("##########################                   Перебір HashMap колекції EntrySet                           ##########################");
             for (Map.Entry<User, Role> worker : mapCollection.entrySet()) {
@@ -112,7 +114,7 @@ public class MapInterface {
                 }
             }
 
-            System.out.println("");
+            System.out.println();
             System.out.println("##########################           Перебір HashMap  Ітератором значення як Колекції                ##########################");
             Collection<Role> values = mapCollection.values();
             Iterator<Role> iterator1 = values.iterator();
@@ -123,21 +125,26 @@ public class MapInterface {
             mapCollection.put(null, guest);
 
 
-            System.out.println("");
+            System.out.println();
             System.out.println("#####################   getOrDefault     ############################");
             System.out.println("#####################   Якщо є ключ то вертає значення, а якщо ні то 2 параметр що передали     ############################");
             Role orDefault = mapCollection.getOrDefault(new User("Petro", "Petrov", 31), admin);
             System.out.println(orDefault.getName());
 
-            System.out.println("");
+            System.out.println();
             System.out.println("#####################    putIfAbsent    ############################");
             System.out.println("#####################    Якщо ключ null або його нема то добавить значення з параметрів    ############################");
             mapCollection.putIfAbsent(jora, null);
-            System.out.println("");
+            System.out.println();
             System.out.println(mapCollection);
         }
         if (mapCollection.getClass() == TreeMap.class) {
-//            mapCollection.put(null, guest);
+            mapCollection.put(semen, guest);
+            Set<Map.Entry<User, Role>> entries = mapCollection.entrySet();
+            List<String> users = entries.stream().map(Map.Entry::getKey).map(user -> user.getName()).toList();
+            List<String> roles = entries.stream().map(Map.Entry::getValue).map(role -> role.getName()).toList();
+            System.out.println(users.toString());
+            System.out.println(roles.toString());
         }
 
 

@@ -3,7 +3,6 @@ package Core;
 import java.util.Arrays;
 
 public class LinkedListExercise {
-
     private Node head;
     private int size;
 
